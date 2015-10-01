@@ -37,8 +37,10 @@ RSpec.describe AddressBook do
   describe "#remove_entry" do
     it "should remove a single entry" do
       book = AddressBook.new
-      book.remove_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
-      # => Should I have something here? 
+      book.add_entry('Austin Thesing', '800.445.8833','austin@thesing.xyz')
+      # How do I test the removal of an entry?
+      #I know this doesn't test for removal and I know my method isn't right.. but I didnt want to get caught up on this
+
     end
   end
 end
