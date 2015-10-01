@@ -19,10 +19,12 @@ class AddressBook
    end
 
    def remove_entry(name,phone_number,email)
-     if (name == name.entry) && (email == email.entry) && (phone_number = phone_number.entry)
-       entry.delete
-     else
-       p "Entry does not exist \n Please try again."
-     end
+     @entries.each do |entry|
+       if (name == entry.name) && (email ==  entry.email) && (phone_number = entry.phone_number)
+         entry.delete
+       else
+         p "Entry does not exist \n Please try again."
+       end
+     end     
    end
  end

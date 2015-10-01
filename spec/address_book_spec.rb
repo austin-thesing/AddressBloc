@@ -38,9 +38,11 @@ RSpec.describe AddressBook do
     it "should remove a single entry" do
       book = AddressBook.new
       book.add_entry('Austin Thesing', '800.445.8833','austin@thesing.xyz')
+      expect(book.entries.size).to eq(1)
       # How do I test the removal of an entry?
       #I know this doesn't test for removal and I know my method isn't right.. but I didnt want to get caught up on this
-
+      book.remove_entry('Austin Thesing', '800.445.8833','austin@thesing.xyz')
+      expect(book.entries.size).to eq(0)
     end
   end
 end
