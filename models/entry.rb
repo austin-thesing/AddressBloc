@@ -4,6 +4,6 @@ class Entry
     @name,@phone_number,@email  = name,phone_number,email
   end
   def to_s
-    p "Name: #{@name}\nPhone Number: #{@phone_number}\nEmail: #{@email}"
+    "Name: #{@name}\nPhone Number: #{@phone_number}\nEmail: #{@email}"
   end
 end
