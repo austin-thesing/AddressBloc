@@ -13,7 +13,8 @@ class MenuController
     p "2 - Create an entry"
     p "3 - Search for an entry"
     p "4 - Import entries from a CSV"
-    p "5 - Exit"
+    p "5 - View Entry n"
+    p "6 - Exit"
     print "Enter your selection: "
 
     selection = gets.to_i
@@ -35,13 +36,30 @@ class MenuController
       read_csv
       main_menu
     when 5
+      system "clear"
+      view_entry_n_submenu
+      main_menu
+    when 6
       p "Good Bye"
 
-      exit(0) # What does this do?
+      exit(0) # Says that it is exiting without and error message
     else
       system "clear"
       puts "Sorry, that is not a valid input"
       main_menu
+    end
+  end
+  def view_entry_n_submenu
+    print "What entry # do you want to access?: "
+    sel_n = gets.chomp.to_i #to_i because case statement is expecting Integers
+    if sel_n < @address_book.entries.count #checks to see if sel_n is longer then the index
+      p @address_book.entries(sel_n) #puts address_book.entries and the selection by index
+      p "Hit any key to return to the Main Menu: "
+      gets.chomp
+      system "clear"
+    else
+      p "#{sel_n} is not a valid entry in AddressBloc please try again" #prints out their entry and provides reason it was not returned
+      view_entry_n_submenu # => Brings the submenu back up
     end
   end
   def view_all_entries
