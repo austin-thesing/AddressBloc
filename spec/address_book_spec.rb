@@ -61,27 +61,27 @@ RSpec.describe AddressBook do
     it "adds the first entry" do
       book.import_from_csv("entries.csv")
       entry_one = book.entries[0]
-      check_entry(entry_one,"Mark Griffo","123456789","mark@bloc.com")
+      check_entry(entry_one, "Bill", "555-555-4854", "bill@blocmail.com")
     end
     it "adds the second entry" do
       book.import_from_csv("entries.csv")
       entry_two = book.entries[1]
-      check_entry(entry_two,"Natalie Griffo","123456789","natalie@bloc.com")
+      check_entry(entry_two, "Bob", "555-555-5415", "bob@blocmail.com")
     end
     it "adds the third entry" do
       book.import_from_csv("entries.csv")
       entry_three = book.entries[2]
-      check_entry(entry_three, "Steve Thesing", "8583878899", "steve@steve.com")
+      check_entry(entry_three, "Joe", "555-555-3660", "joe@blocmail.com")
     end
     it "adds the fourth entry" do
       book.import_from_csv("entries.csv")
       entry_four = book.entries[3]
-      check_entry(entry_four, "Haidee Thesing", "8584458833", "h@thesing.com")
+      check_entry(entry_four, "Sally", "555-555-4646", "sally@blocmail.com")
     end
     it "adds the fifth entry" do
       book.import_from_csv("entries.csv")
       entry_five = book.entries[4]
-      check_entry(entry_five, "Olivia Meers", "0987654321", "olivia@meers.com")
+      check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
     end
   end
 end

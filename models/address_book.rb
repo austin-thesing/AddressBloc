@@ -32,12 +32,13 @@ class AddressBook
    end
 
    def remove_entry(name,phone_number,email)
-     @entries.each do |entry|
+     index = 0 # => basically says start at the first index
+     @entries.each do |entry| #loops through all the entries in @entry
        if (name == entry.name) && (email ==  entry.email) && (phone_number = entry.phone_number)
-         entry.delete #this line returns an error in my RSPEC test
-       else
-         p "Entry does not exist \n Please try again."
+         break # => if the entry is found break from the loop and delete at that index
        end
+       index += 1 # => if the statement is false it bumps up the index and passes throug the loop again
      end
+     @entries.delete_at(index) # => deletes at the index where the entry exsists 
    end
  end
