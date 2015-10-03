@@ -39,6 +39,22 @@ class AddressBook
        end
        index += 1 # => if the statement is false it bumps up the index and passes throug the loop again
      end
-     @entries.delete_at(index) # => deletes at the index where the entry exsists 
+     @entries.delete_at(index) # => deletes at the index where the entry exsists
    end
+   def binary_search(name) # => can you walk me through the While loop of the method
+     lower = 0
+     upper = entries.length - 1 # => is this subtracting one because we are checking the length of entries which will return 1 more then the # of the index of the last item? so we remove one to get the final items/objects index?
+     while lower <= upper
+       mid = (lower + upper) / 2
+       mid_name = entries[mid].name # => gets the name of the middle entry in our array by index and sets it as the value of mid_name
+       if name == mid_name
+         return entries[mid] # => returns the index of the middle value
+       elsif name < mid_name
+         upper = mid - 1 # => subtracts one from the index of the middle value
+       elsif
+         lower = mid + 1 # => adds on to the index of the middle value
+       end
+     end
+     return nil # => Why are we we still returning nil at the end?
+  end
  end
