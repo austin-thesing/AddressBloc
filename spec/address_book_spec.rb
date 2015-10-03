@@ -83,5 +83,24 @@ RSpec.describe AddressBook do
       entry_five = book.entries[4]
       check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
     end
+
+    # => CP 23 Assignment *****************************
+    # => Do I need to re-describe #import_from_csv is that good practice? Or not because it makes my code redundant? I feel like I need to but am unsure on how
+    it "imports the sixth entry" do
+      book.import_from_csv("entries2.csv")
+      entry_six = book.entries[5]
+      # => Is there a better way to number out tests if we were to import from a new file instead of numbering out entries with a aptly named variable ie entry_six
+      check_entry(entry_six, "Austin","123456789", "austin@thesing.xyz")
+    end
+    it "imports the seventh entry" do
+      book.import_from_csv("entries2.csv")
+      entry_seven = book.entries[6]
+      check_entry(entry_seven, "Bob", "1234567890", "bob@bloc.io")
+    end
+    it "imports the eight entry" do
+      book.import_from_csv("entries2.csv")
+      entry_eight = book.entries[7]
+      check_entry(entry_eight, "Chris", "1234567890", "chris@bloc.io")
+    end
   end
 end
