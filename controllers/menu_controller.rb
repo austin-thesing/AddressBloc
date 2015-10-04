@@ -53,7 +53,7 @@ class MenuController
     print "What entry # do you want to access?: "
     sel_n = gets.chomp.to_i #to_i because case statement is expecting Integers
     if sel_n < @address_book.entries.count #checks to see if sel_n is longer then the index
-      p @address_book.entries(sel_n) #puts address_book.entries and the selection by index
+      p @address_book.entries[sel_n] #puts address_book.entries and the selection by index **careful to use the proper [] instead of ()
       p "Hit any key to return to the Main Menu: "
       gets.chomp
       system "clear"
