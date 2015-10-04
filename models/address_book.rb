@@ -57,4 +57,15 @@ class AddressBook
      end
      return nil # => Why are we we still returning nil at the end?
   end
+  def iterative_search(name) # => I tried to almost mimic the remove method and how it loops through by index and such. I think I am kind of close in my thought process.. Obviously it should some kind of each loop. It also needs to return the proper name/entry some how
+    index = 0
+    @entries.each do |entry|
+      if name == entry.name
+        return entry # => I had ommitted this at first but then realized my tests were failing because I was not returning the entry when my search had found it.
+        break
+      end
+      index += 1
+    end
+    return nil
+  end
  end
