@@ -14,6 +14,8 @@ class MenuController
     p "3 - Search for an entry"
     p "4 - Import entries from a CSV"
     p "5 - Exit"
+    p "6 - Delete All Entries ***"
+    p "***This is irreversible please use with caution***"
     print "Enter your selection: "
 
     selection = gets.to_i
@@ -38,11 +40,19 @@ class MenuController
       p "Good Bye"
 
       exit(0) # What does this do?
+    when 6
+      nuke_entries
+      p "All entries have been deleted."
+      p " Total Entries: #{@address_book.entries.count}"
     else
       system "clear"
       puts "Sorry, that is not a valid input"
       main_menu
     end
+  end
+
+  def nuke_entries
+    @address_book.entries.clear
   end
 
   def view_all_entries
