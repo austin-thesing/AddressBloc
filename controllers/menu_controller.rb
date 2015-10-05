@@ -48,7 +48,7 @@ class MenuController
   def view_all_entries
     system "clear"
     @address_book.entries.each do |entry|
-      p entry.to_s
+      puts entry.to_s
       entry_submenu(entry)
     end
     p "End of entries"
